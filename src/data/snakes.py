@@ -10,6 +10,6 @@ class Snake(mongoengine.Document):
     is_venomous = mongoengine.BooleanField(required=True)
 
     meta =  {
-        'db_alias': 'core'
+        'db_alias': 'core',
         'collection': 'snakes'
     }

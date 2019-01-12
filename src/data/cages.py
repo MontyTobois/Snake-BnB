@@ -14,6 +14,6 @@ class Cage(mongoengine.Document):
     bookings = mongoengine.EmbeddedDocumentListField(Booking)
 
     meta =  {
-        'db_alias': 'core'
+        'db_alias': 'core',
         'collection': 'cages'
     }

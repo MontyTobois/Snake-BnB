@@ -11,6 +11,6 @@ class Owner(mongoengine.Document):
     cage_id = mongoengine.ListField()
 
     meta =  {
-        'db_alias': 'core'
+        'db_alias': 'core',
         'collection': 'owners'
     }

@@ -1,14 +1,17 @@
-class Cage:
-    registered_data = None
+import mongoengine
+import datetime
 
-    price = None
-    square_meter = None
-    name = None
-    has_toy = None
-    is_carpeted = None
-    allow_dangerous_snakes = None
+class Cage(mongoengine.Document):
+    registered_data = mongoengine.DateTimeField(default=datetime.datetime.now)
 
-    bookings = list()
+    price = mongoengine.FloatField(required=True)
+    square_meter = mongoengine.BooleanField(required=True)
+    name = mongoengine.StringField(required=True)
+    has_toy = mongoengine.BooleanField(required=True)
+    is_carpeted = mongoengine.BooleanField(required=True)
+    allow_dangerous_snakes = mongoengine.BooleanField(default=False)
+
+    bookings = mongoengine.EmbeddedDocumentListField(Booking)
 
     meta =  {
         'db_alias': 'core'

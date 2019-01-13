@@ -11,5 +11,5 @@ def create_account(name: str, email: str) -> Owner:
 
 def find_account_by_email(email: str) -> Owner:
 
-    owner  = Owner.objects(email=email).first()
+    owner = Owner.objects(email=email).first()
     return owner

@@ -1,7 +1,8 @@
 import datetime
 import mongoengine
 
-class Booking(mongoengine.EmbeddedDocument)
+
+class Booking(mongoengine.EmbeddedDocument):
     guest_owner_id = mongoengine.ObjectIdField()
     guest_snake_id = mongoengine.ObjectIdField()
 

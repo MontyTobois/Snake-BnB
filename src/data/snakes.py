@@ -1,6 +1,7 @@
 import mongoengine
 import datetime
 
+
 class Snake(mongoengine.Document):
     registered_data = mongoengine.DateTimeField(default=datetime.datetime.now)
     species = mongoengine.StringField(required=True)
@@ -9,7 +10,7 @@ class Snake(mongoengine.Document):
     name = mongoengine.StringField(required=True)
     is_venomous = mongoengine.BooleanField(required=True)
 
-    meta =  {
+    meta = {
         'db_alias': 'core',
         'collection': 'snakes'
     }
